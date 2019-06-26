@@ -5,6 +5,7 @@ import GridTypeSelect from './components/GridTypeSelect'
 import AddSubplotInterface from './components/AddSubplotInterface';
 import Grid from './components/Grid';
 import Subplot2GridInterface from './components/Subplot2GridInterface';
+import Subplot2Grid from './components/Subplot2Grid';
 
 
 
@@ -64,6 +65,7 @@ class App extends Component {
           &&
           <div>
             <Subplot2GridInterface set2Grid={this.set2Grid}/>
+            <Subplot2Grid gridSpecs={this.state.subplot2Grid} />
           </div>
         }
 

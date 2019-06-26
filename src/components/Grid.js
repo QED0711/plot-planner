@@ -26,7 +26,7 @@ const Grid = ({ gridSpecs }) => {
     }
 
     return(
-        <div id="grid-display" style={displayStyle}>
+        <div className="grid-display" style={displayStyle}>
             {createGrid()}
         </div>
     )
