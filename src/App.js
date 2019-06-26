@@ -21,8 +21,8 @@ class App extends Component {
       },
 
       subplot2Grid: {
-        gridSize: [1, 1,],
-        selectedSize: [0,0],
+        shape: [1, 1],
+        loc: [0,0],
         rowspan: 1,
         colspan: 1
       }
@@ -30,10 +30,10 @@ class App extends Component {
     
     this.setType = this.setType.bind(this)
     this.setAddSubplot = this.setAddSubplot.bind(this)
+    this.set2Grid = this.set2Grid.bind(this)
   }
 
   setType = (type) => {
-    console.log("CALLED")
     this.setState({type})
   }
 
@@ -41,8 +41,12 @@ class App extends Component {
     this.setState({addSubplot: {gridSize, selectedIndex}})
   }
 
-  render(){
+  set2Grid = (shape, loc, rowspan, colspan) => {
+    this.setState({subplot2Grid: {shape, loc, rowspan, colspan}})
+  }
 
+  render(){
+    
     return (
       <div className="App">
         <GridTypeSelect setType={this.setType} />
@@ -59,7 +63,7 @@ class App extends Component {
           this.state.type === "subplot2Grid"
           &&
           <div>
-            <Subplot2GridInterface />
+            <Subplot2GridInterface set2Grid={this.set2Grid}/>
           </div>
         }
 

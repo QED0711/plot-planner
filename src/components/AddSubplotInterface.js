@@ -15,7 +15,7 @@ const AddSubplotInterface = ({ setAddSubplot, gridSpecs }) => {
     const maxIndex = gridSize[0] * gridSize[1]; 
 
     return(
-        <div id="AddSubplotInterface">
+        <div id="AddSubplotInterface" className="interface">
             <form id="interface-form" onChange={getGridSpecs}>
                 .add_subplot(
                 <input id="grid-rows" type="number" defaultValue="1" min="1" max="12"/>,

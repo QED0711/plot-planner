@@ -3,7 +3,7 @@
   margin: 1em;
 }
 
-#AddSubplotInterface{
+.interface{
   width: calc(500px + 2em);
   margin: 0 auto;
   padding: 1em 0;
@@ -13,12 +13,14 @@
 }
 
 form input{
-  margin: 0 5px;
+  margin: 0.25em 5px;
   border: none;
   border-radius: 8px;
   padding: 5px;
   text-align: center;
   box-shadow: 1px 1px 5px black;
+
+  width: 3em;
 }
 
 #grid-display{
