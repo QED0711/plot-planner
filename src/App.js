@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Interface from './components/Interface';
+import Grid from './components/Grid';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      gridSize: [1, 1],
+      selectedIndex: 1
+    }
+    this.setGrid = this.setGrid.bind(this)
+  }
+
+  setGrid = (gridSize, selectedIndex) => {
+    this.setState({gridSize, selectedIndex})
+  }
+
+  render(){
+
+    
+
+    return (
+      <div className="App">
+          <Interface setGrid={this.setGrid} gridSpecs={this.state}/>
+          <Grid gridSpecs={this.state}/>
+      </div>
+    );    
+  }
 }
 
 export default App;
