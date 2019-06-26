@@ -1,14 +1,16 @@
 import React from 'react'
 
-const Subplot2GridInterface = ({ set2Grid }) => {
+const Subplot2GridInterface = ({ set2Grid, gridSpecs }) => {
 
-
+    const {shape, loc, rowspan, colspan} = gridSpecs
 
     const handleChange = () => {
         const shape1 = parseInt(document.getElementById("shape-1").value)
         const shape2 = parseInt(document.getElementById("shape-2").value)
+
         const loc1 = parseInt(document.getElementById("loc-1").value)
         const loc2 = parseInt(document.getElementById("loc-2").value)
+
         const rowspan = parseInt(document.getElementById("rowspan").value)
         const colspan = parseInt(document.getElementById("colspan").value)
 
@@ -27,12 +29,12 @@ const Subplot2GridInterface = ({ set2Grid }) => {
                 (<input id="shape-1" type="number" defaultValue="1" max="10" min="1"/>
                 <input id="shape-2" type="number" defaultValue="1" max="10" min="1" />),
 
-                (<input id="loc-1" type="number" defaultValue="0" max="9" min="0"/>
-                <input id="loc-2" type="number" defaultValue="0" max="9" min="0" />),
+                (<input id="loc-1" type="number" defaultValue="0" max="9" min="0" max={shape[0] - rowspan} />
+                <input id="loc-2" type="number" defaultValue="0" max="9" min="0" max={shape[1] - colspan}/>),
 
                 <br/>
                 
-                rowspan=<input id="rowspan" type="number" defaultValue="1" max="10" min="1"/>,
+                rowspan=<input id="rowspan" type="number" defaultValue="1" max="10" min="1" max={shape[0] - loc[0]}/>,
                 colspan=<input id="colspan" type="number" defaultValue="1" max="10" min="1"/>,
 
                 )

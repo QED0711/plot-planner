@@ -64,7 +64,7 @@ class App extends Component {
           this.state.type === "subplot2Grid"
           &&
           <div>
-            <Subplot2GridInterface set2Grid={this.set2Grid}/>
+            <Subplot2GridInterface set2Grid={this.set2Grid} gridSpecs={this.state.subplot2Grid}/>
             <Subplot2Grid gridSpecs={this.state.subplot2Grid} />
           </div>
         }
