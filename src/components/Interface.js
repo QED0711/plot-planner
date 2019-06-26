@@ -18,9 +18,9 @@ const Interface = ({ setGrid, gridSpecs }) => {
         <div className="Interface">
             <form id="interface-form" onChange={getGridSpecs}>
                 .add_subplot(
-                <input id="grid-rows" type="number" defaultValue="1" min="1" max="10"/>,
+                <input id="grid-rows" type="number" defaultValue="1" min="1" max="12"/>,
                 
-                <input id="grid-columns" type="number" defaultValue="1" min="1" max="10"/>,
+                <input id="grid-columns" type="number" defaultValue="1" min="1" max="12"/>,
 
                 <input id="grid-selected-index" type="number" defaultValue="1" min="1" max={`${maxIndex}`}/>
                 )
