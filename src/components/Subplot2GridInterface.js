@@ -24,16 +24,16 @@ const Subplot2GridInterface = ({ set2Grid }) => {
             <form onChange={handleChange}>
                 .subplot2grid(
                 
-                (<input id="shape-1" type="number" defaultValue="3" max="10" min="1"/>
-                <input id="shape-2" type="number" defaultValue="4" max="10" min="1" />),
+                (<input id="shape-1" type="number" defaultValue="1" max="10" min="1"/>
+                <input id="shape-2" type="number" defaultValue="1" max="10" min="1" />),
 
-                (<input id="loc-1" type="number" defaultValue="1" max="9" min="0"/>
-                <input id="loc-2" type="number" defaultValue="1" max="9" min="0" />),
+                (<input id="loc-1" type="number" defaultValue="0" max="9" min="0"/>
+                <input id="loc-2" type="number" defaultValue="0" max="9" min="0" />),
 
                 <br/>
                 
-                rowspan=<input id="rowspan" type="number" defaultValue="2" max="10" min="1"/>,
-                colspan=<input id="colspan" type="number" defaultValue="3" max="10" min="1"/>,
+                rowspan=<input id="rowspan" type="number" defaultValue="1" max="10" min="1"/>,
+                colspan=<input id="colspan" type="number" defaultValue="1" max="10" min="1"/>,
 
                 )
             </form>

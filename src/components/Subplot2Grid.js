@@ -24,22 +24,26 @@ const Subplot2Grid = ({ gridSpecs }) => {
     const selectedItemList = () => {
         let selected = [];
         const matrix = createMatrix(shape)
-        const starting = matrix[loc[0]][loc[1]]
         for(let i = loc[0]; i < loc[0] + rowspan; i++){
-            console.log(matrix[i].slice(loc[1], loc[1] + colspan))
+            selected.push(...matrix[i].slice(loc[1], loc[1] + colspan))
         }
-        
+        return selected
     }
     
-    selectedItemList()
     const createGrid = () => {
         const totalItems = shape[0] * shape[1]
-
+        const selectedItems = selectedItemList();
         const gridItems = []
         for(let i = 0; i < totalItems; i++){
-            gridItems.push(
-                <div key={i} className="grid-item">{i}</div>
-            )
+            if(selectedItems.includes(i)){
+                gridItems.push(
+                    <div key={i} className="grid-item selected-true"><p>{i}</p></div>
+                )
+            } else {
+                gridItems.push(
+                    <div key={i} className="grid-item selected-false"><p>{i}</p></div>
+                )
+            }
         }
 
         return gridItems;
