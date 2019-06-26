@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Interface from './components/Interface';
+import AddSubplotInterface from './components/AddSubplotInterface';
 import Grid from './components/Grid';
 
 
@@ -10,14 +10,25 @@ class App extends Component {
     super(props);
 
     this.state = {
-      gridSize: [1, 1],
-      selectedIndex: 1
+      type: "add_subplot",
+
+      addSubplot: {
+        gridSize: [1, 1],
+        selectedIndex: 1
+      },
+
+      subplot2Grid: {
+        gridSize: [1, 1,],
+        selectedSize: [0,0],
+        rowspan: 1,
+        colspan: 1
+      }
     }
-    this.setGrid = this.setGrid.bind(this)
+    this.setAddSubplot = this.setAddSubplot.bind(this)
   }
 
-  setGrid = (gridSize, selectedIndex) => {
-    this.setState({gridSize, selectedIndex})
+  setAddSubplot = (gridSize, selectedIndex) => {
+    this.setState({addSubplot: {gridSize, selectedIndex}})
   }
 
   render(){
@@ -26,8 +37,9 @@ class App extends Component {
 
     return (
       <div className="App">
-          <Interface setGrid={this.setGrid} gridSpecs={this.state}/>
-          <Grid gridSpecs={this.state}/>
+          <AddSubplotInterface setAddSubplot={this.setAddSubplot} gridSpecs={this.state.addSubplot}/>
+
+          <Grid gridSpecs={this.state.addSubplot}/>
       </div>
     );    
   }

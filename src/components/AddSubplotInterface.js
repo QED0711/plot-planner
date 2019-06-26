@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Interface = ({ setGrid, gridSpecs }) => {
+const AddSubplotInterface = ({ setAddSubplot, gridSpecs }) => {
 
     const getGridSpecs = () => {
         const rows = parseInt(document.getElementById("grid-rows").value)
@@ -8,14 +8,14 @@ const Interface = ({ setGrid, gridSpecs }) => {
         
         const selectedIndex = parseInt(document.getElementById("grid-selected-index").value)
         
-        setGrid([rows, columns], selectedIndex)
+        setAddSubplot([rows, columns], selectedIndex)
     }
 
     const { gridSize } = gridSpecs;
     const maxIndex = gridSize[0] * gridSize[1]; 
 
     return(
-        <div className="Interface">
+        <div id="AddSubplotInterface">
             <form id="interface-form" onChange={getGridSpecs}>
                 .add_subplot(
                 <input id="grid-rows" type="number" defaultValue="1" min="1" max="12"/>,
@@ -30,4 +30,4 @@ const Interface = ({ setGrid, gridSpecs }) => {
 
 }
 
-export default Interface; 
+export default AddSubplotInterface; 
