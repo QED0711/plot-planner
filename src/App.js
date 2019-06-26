@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
+
+import GridTypeSelect from './components/GridTypeSelect'
 import AddSubplotInterface from './components/AddSubplotInterface';
 import Grid from './components/Grid';
+import Subplot2GridInterface from './components/Subplot2GridInterface';
 
 
 
@@ -24,7 +27,14 @@ class App extends Component {
         colspan: 1
       }
     }
+    
+    this.setType = this.setType.bind(this)
     this.setAddSubplot = this.setAddSubplot.bind(this)
+  }
+
+  setType = (type) => {
+    console.log("CALLED")
+    this.setState({type})
   }
 
   setAddSubplot = (gridSize, selectedIndex) => {
@@ -33,13 +43,26 @@ class App extends Component {
 
   render(){
 
-    
-
     return (
       <div className="App">
-          <AddSubplotInterface setAddSubplot={this.setAddSubplot} gridSpecs={this.state.addSubplot}/>
+        <GridTypeSelect setType={this.setType} />
+        {
+          this.state.type === 'add_subplot' 
+          &&
+          <div>
+            <AddSubplotInterface setAddSubplot={this.setAddSubplot} gridSpecs={this.state.addSubplot}/>
+            <Grid gridSpecs={this.state.addSubplot}/>
+          </div>
+        }
 
-          <Grid gridSpecs={this.state.addSubplot}/>
+        {
+          this.state.type === "subplot2Grid"
+          &&
+          <div>
+            <Subplot2GridInterface />
+          </div>
+        }
+
       </div>
     );    
   }

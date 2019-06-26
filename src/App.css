@@ -12,7 +12,7 @@
   box-shadow: 2px 2px 8px black inset;
 }
 
-#interface-form input{
+form input{
   margin: 0 5px;
   border: none;
   border-radius: 8px;
