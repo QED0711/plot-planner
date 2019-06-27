@@ -16,7 +16,7 @@ const GridTypeSelect = ({ setType, selectedType }) => {
             
             <button className={`type-selector-button button-selected-${selectedType === "subplot2Grid"}`} 
                 onClick={handleClick('subplot2Grid')}>
-                    .subplot2Grid
+                    .subplot2grid
             </button>
         </div>
     )
