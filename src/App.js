@@ -71,6 +71,12 @@ class App extends Component {
     
     return (
       <div className="App">
+        <h1 className="title"><em>Subplot Planner</em></h1>
+        <p className="description">
+          <em>
+            A simple tool to help you visualize and plan your subplots in matplotlib.
+          </em>
+        </p>
         <GridTypeSelect selectedType={this.state.type} setType={this.setType} />
         {
           this.state.type === 'add_subplot' 

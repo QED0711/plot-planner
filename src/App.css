@@ -1,6 +1,26 @@
+body{
+  background-color: #566573;
+}
 .App {
   text-align: center;
-  margin: 1em;
+
+  width: 550px;
+  margin: 1em auto 0;
+  padding: 1em;
+  box-shadow: 2px 2px 10px black;
+  border-radius: 4px;
+  background-color: #F2F4F4;
+  color: #566573;
+}
+
+.title{
+  margin: 0;
+  text-decoration: underline;
+  color: #566573;
+}
+
+.description{
+  margin: 0.5em 0 1em;
 }
 
 .type-selector-button{
@@ -8,7 +28,7 @@
   margin: 0 0.5em;
   padding: 3px 1em 0;
   font-size: 1.5em;
-
+  
   background-color: #F8F9F9;
   box-shadow: 2px 0px 4px black;
   border-top-left-radius: 10px;
@@ -18,8 +38,8 @@
 }
 
 .button-selected-true{
-  background-color: #808B96;
-  color: #D6EAF8;
+  background-color: #b8babd;
+  color: #ee3c2c;
 }
 
 .interface{
