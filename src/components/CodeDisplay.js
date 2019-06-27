@@ -6,9 +6,13 @@ const CodeDisplay = ({ type, gridSpec }) => {
         <div className="code-display">
             {
                 type === "add_subplot" ?
-                <div>{`fig.add_subplot(${gs.gridSize[0]}, ${gs.gridSize[1]}, ${gs.selectedIndex})`}</div>
+                <div>
+                    {`fig.add_subplot(${gs.gridSize[0]}, ${gs.gridSize[1]}, ${gs.selectedIndex})`}
+                </div>
                 :
-                <div>{`plt.subplot2grid((${gs.shape[0]}, ${gs.shape[1]}), (${gs.loc[0]}, ${gs.loc[1]}), rowspan=${gs.rowspan}, colspan=${gs.colspan})`}</div>
+                <div>
+                    {`plt.subplot2grid((${gs.shape[0]}, ${gs.shape[1]}), (${gs.loc[0]}, ${gs.loc[1]}), rowspan=${gs.rowspan}, colspan=${gs.colspan})`}
+                </div>
             }
         </div>
     )
