@@ -1,18 +1,21 @@
 import React from 'react'
 
+import isValidInput from '../js/isValidInput';
+
 const AddSubplotInterface = ({ setAddSubplot, gridSpecs }) => {
-
-    const getGridSpecs = () => {
-        const rows = parseInt(document.getElementById("grid-rows").value)
-        const columns = parseInt(document.getElementById("grid-columns").value)
-        
-        const selectedIndex = parseInt(document.getElementById("grid-selected-index").value)
-        
-        setAddSubplot([rows, columns], selectedIndex)
-    }
-
     const { gridSize } = gridSpecs;
     const maxIndex = gridSize[0] * gridSize[1]; 
+
+    const getGridSpecs = () => {
+        const rows = isValidInput(parseInt(document.getElementById("grid-rows").value), 1, 12)
+        const columns = isValidInput(parseInt(document.getElementById("grid-columns").value), 1, 12)
+        
+        const selectedIndex = isValidInput(parseInt(document.getElementById("grid-selected-index").value), 1, maxIndex)
+
+        setAddSubplot([rows, columns], selectedIndex)
+
+    }
+
 
     return(
         <div id="AddSubplotInterface" className="interface">

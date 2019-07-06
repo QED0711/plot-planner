@@ -1,5 +1,5 @@
 import React from 'react';
-import { start } from 'pretty-error';
+import checkInts from '../js/checkInts';
 
 const Subplot2Grid = ({ gridSpecs }) => {
 
