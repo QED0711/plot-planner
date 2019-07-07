@@ -31,19 +31,24 @@ const Subplot2Grid = ({ gridSpecs }) => {
     }
     
     const createGrid = () => {
-        const totalItems = shape[0] * shape[1]
+        // const totalItems = shape[0] * shape[1]
         const selectedItems = selectedItemList();
         const gridItems = []
-        for(let i = 0; i < totalItems; i++){
-            if(selectedItems.includes(i)){
-                gridItems.push(
-                    <div key={i} className="grid-item selected-true"><p>{i}</p></div>
-                )
-            } else {
-                gridItems.push(
-                    <div key={i} className="grid-item selected-false"><p>{i}</p></div>
-                )
+        let curIndex = 0;
+        for(let i = 0; i < shape[0]; i++){
+            for(let j = 0; j < shape[1]; j++){
+                if(selectedItems.includes(curIndex)){
+                    gridItems.push(
+                        <div key={`${i}x${j}`} className="grid-item selected-true"><p>{`${i},${j}`}</p></div>
+                    )
+                } else {
+                    gridItems.push(
+                        <div key={`${i}x${j}`} className="grid-item selected-false"><p>{`${i},${j}`}</p></div>
+                    )
+                }
+                curIndex += 1
             }
+    
         }
 
         return gridItems;
