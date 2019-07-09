@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d88863b69e8a8e53edf13a2728221db5",
+    "revision": "06720ada401ab3b85ba60acdc9502c37",
     "url": "/plot-planner/index.html"
   },
   {
-    "revision": "e7d9b228daf8e9ae6913",
+    "revision": "1cc34012df76eb00b825",
     "url": "/plot-planner/static/css/main.dfa2557a.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plot-planner/static/js/2.aa2dfdb1.chunk.js"
   },
   {
-    "revision": "e7d9b228daf8e9ae6913",
-    "url": "/plot-planner/static/js/main.b676709e.chunk.js"
+    "revision": "1cc34012df76eb00b825",
+    "url": "/plot-planner/static/js/main.5ca6e727.chunk.js"
   },
   {
     "revision": "fa7e246eb073a3d5e94a",
