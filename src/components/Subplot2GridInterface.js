@@ -6,6 +6,9 @@ const Subplot2GridInterface = ({ set2Grid, gridSpecs }) => {
 
     const {shape, loc, rowspan, colspan} = gridSpecs
 
+    const shapeRowMin = Math.max(loc[0] + 1, loc[0] + rowspan)
+    const shapeColMin = Math.max(loc[1] + 1, loc[1] + colspan)
+
     const [shape1max, shape2max, loc1max, loc2max, rowspanMax, colspanMax] = [
         9, 
         9, 
@@ -38,8 +41,8 @@ const Subplot2GridInterface = ({ set2Grid, gridSpecs }) => {
             <form onChange={handleChange}>
                 .subplot2grid(
                 
-                (<input id="shape-1" type="number" defaultValue="1" min={loc[0] + 1} max="9"/>,
-                <input id="shape-2" type="number" defaultValue="1" min={loc[1] + 1} max="9" />),
+                (<input id="shape-1" type="number" defaultValue="1" min={shapeRowMin} max="9"/>,
+                <input id="shape-2" type="number" defaultValue="1" min={shapeColMin} max="9" />),
 
                 (<input id="loc-1" type="number" defaultValue="0" min="0" max={shape[0] - rowspan} />,
                 <input id="loc-2" type="number" defaultValue="0" min="0" max={shape[1] - colspan}/>),
