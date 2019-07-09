@@ -71,7 +71,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <h1 className="title"><em>Subplot Planner</em></h1>
+        <h1 className="title"><em>Plot Planner</em></h1>
         <p className="description">
           <em>
             A simple tool to help you visualize and plan your subplots in matplotlib.

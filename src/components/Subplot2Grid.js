@@ -3,7 +3,7 @@ import checkInts from '../js/checkInts';
 
 const Subplot2Grid = ({ gridSpecs }) => {
 
-
+    let validEntry = true;
 
     const {shape, loc, rowspan, colspan} = gridSpecs
 
@@ -23,7 +23,7 @@ const Subplot2Grid = ({ gridSpecs }) => {
 
     const selectedItemList = () => {
         let selected = [];
-        const matrix = createMatrix(shape)
+        const matrix = createMatrix(shape)        
         for(let i = loc[0]; i < loc[0] + rowspan; i++){
             selected.push(...matrix[i].slice(loc[1], loc[1] + colspan))
         }
@@ -31,8 +31,10 @@ const Subplot2Grid = ({ gridSpecs }) => {
     }
     
     const createGrid = () => {
-        // const totalItems = shape[0] * shape[1]
         const selectedItems = selectedItemList();
+        
+        if(!selectedItems) return <div><p>Invalid Plot</p></div>
+
         const gridItems = []
         let curIndex = 0;
         for(let i = 0; i < shape[0]; i++){
